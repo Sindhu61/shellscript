@@ -1,0 +1,103 @@
+               EXAMPLE_1
+
+$ vi example1.sh
+$ ./example1.sh
+-bash: ./example1.sh: Permission denied
+$ chmod u+x example1.sh
+$ cat example1.sh
+#!/bin/sh
+#timestable - print out a multiplication table
+for i in 1 2 3
+do
+ for j in 1 2 3 
+ do
+   value='expr $i \* $j'
+   echo -n "$value "
+  done
+  echo
+ done
+    OUTPUT:
+$ ./example1.sh
+expr $i \* $j expr $i \* $j expr $i \* $j 
+expr $i \* $j expr $i \* $j expr $i \* $j 
+expr $i \* $j expr $i \* $j expr $i \* $j 
+
+              EXAMPLE-2 
+
+$ vi forexample2.sh
+$ cat forexample2.sh
+#!/bin/sh
+#file-poke - tell us stuff about files
+files= 'ls'
+for i in $files
+do
+    echo -n "$i "
+    grep $i $i
+done
+$ chmod u+x forexample2.sh
+               OUTPUT:
+$ ./forexample2.sh
+'3D Objects'         Downloads              'My Documents'                                                                                  Pictures       Templates
+ AppData             Favorites               NTUSER.DAT                                                                                     PrintHood      Videos
+'Application Data'   IntelGraphicsProfiles   NTUSER.DAT{5ec3f083-4016-11ec-85ae-fcc40919df09}.TM.blf                                        Recent         forexample2.sh
+ Contacts            Jedi                    NTUSER.DAT{5ec3f083-4016-11ec-85ae-fcc40919df09}.TMContainer00000000000000000001.regtrans-ms  'Saved Games'   ntuser.dat.LOG1
+ Cookies             Links                   NTUSER.DAT{5ec3f083-4016-11ec-85ae-fcc40919df09}.TMContainer00000000000000000002.regtrans-ms   Searches       ntuser.dat.LOG2
+ Desktop            'Local Settings'         NetHood                                                                                        SendTo         ntuser.ini
+ Documents           Music                   OneDrive                                                                                      'Start Menu'
+
+            EXAMPLE-3
+
+$ vi example3.sh
+$ cat example3.sh
+#!/bin/sh
+# file-poke - tell us stull about files
+for i in *; do
+        echo -n "$i "
+        grep $i $i
+done
+$ chmod u+x example3.sh
+             OUTPUT:
+$ ./example3.sh
+3D Objects grep: Objects: No such file or directory
+grep: 3D: No such file or directory
+grep: Objects: No such file or directory
+AppData grep: AppData: Is a directory
+Application Data grep: Data: No such file or directory
+grep: Application: No such file or directory
+grep: Data: No such file or directory
+Contacts grep: Contacts: Is a directory
+Cookies grep: Cookies: Is a directory
+Desktop grep: Desktop: Is a directory
+Documents grep: Documents: Is a directory
+Downloads grep: Downloads: Is a directory
+Favorites grep: Favorites: Is a directory
+IntelGraphicsProfiles grep: IntelGraphicsProfiles: Is a directory
+Jedi grep: Jedi: Is a directory
+Links grep: Links: Is a directory
+Local Settings grep: Settings: No such file or directory
+grep: Local: No such file or directory
+grep: Settings: No such file or directory
+Music grep: Music: Is a directory
+My Documents grep: Documents: Is a directory
+grep: My: No such file or directory
+grep: Documents: Is a directory
+NTUSER.DAT grep: NTUSER.DAT: Device or resource busy
+NTUSER.DAT{5ec3f083-4016-11ec-85ae-fcc40919df09}.TM.blf NTUSER.DAT{5ec3f083-4016-11ec-85ae-fcc40919df09}.TMContainer00000000000000000001.regtrans-ms NTUSER.DAT{5ec3f083-4016-11ec-85ae-fcc40919df09}.TMContainer00000000000000000002.regtrans-ms NetHood grep: NetHood: Is a directory
+OneDrive grep: OneDrive: Is a directory
+Pictures grep: Pictures: Is a directory
+PrintHood grep: PrintHood: Is a directory
+Recent grep: Recent: Is a directory
+Saved Games grep: Games: No such file or directory
+grep: Saved: No such file or directory
+grep: Games: No such file or directory
+Searches grep: Searches: Is a directory
+SendTo grep: SendTo: Is a directory
+Start Menu grep: Menu: No such file or directory
+grep: Start: No such file or directory
+grep: Menu: No such file or directory
+Templates grep: Templates: Is a directory
+Videos grep: Videos: Is a directory
+example3.sh forexample2.sh ntuser.dat.LOG1 grep: ntuser.dat.LOG1: Device or resource busy
+ntuser.dat.LOG2 grep: ntuser.dat.LOG2: Device or resource busy
+ntuser.ini
+
