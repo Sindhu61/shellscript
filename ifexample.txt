@@ -1,0 +1,61 @@
+                   EXAMPLE-1
+$ vi ifexample.sh
+$ cat ifexample.sh
+if grep unix myfile >//dev/null
+then
+        echo "it's there"
+fi
+         OUTPUT:
+$ chmod u+x ifexample.sh
+$ ./ifexample.sh 
+./ifexample.sh: line 1: //dev/null: No such file or directory
+
+                  EXAMPLE-2
+ 
+$ vi ifexample.sh
+$cat ifexample.sh
+if grep unix myfile > //forloopexamples
+then 
+        echo "it's there"
+fi
+         OUTPUT:
+$ ./ifexample.sh
+./ifexample.sh: line 1: //forloopexamples: Is a directory
+
+                 EXAMPLE -3 
+$ vi ifexample2.sh
+$ cat ifexample2.sh
+if grep "UNIX" myfile >/dev/null
+then
+         echo UNIX occurs in myfile
+     else
+        echo NO!
+        echo UNIX does not occur in myfile
+fi
+
+         OUTPUT:
+$ chmod u+x ifexample2.sh
+$ ./ifexample2.sh
+grep: myfile: No such file or directory
+NO!
+UNIX does not occur in myfile
+
+                               EXAMPLE-4
+
+$ vi ifexample2.sh
+$ cat ifexample2.sh
+if grep "UNIX" myfile >/forloopexamples
+then
+         echo UNIX occurs in myfile
+     else
+        echo NO!
+        echo UNIX does not occur in myfile
+fi
+                          OUTPUT:
+$ ./ifexample2.sh
+./ifexample2.sh: line 1: /forloopexamples: Permission denied
+NO!
+UNIX does not occur in myfile
+
+
+
