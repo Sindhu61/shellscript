@@ -1,0 +1,15 @@
+                CREATE FUNCTION:
+
+     EXAMPLE:
+$ vi functionexample.sh
+$ chmod u+x functionexample.sh
+$ cat functionexample.sh
+#!/bin/bash
+function F1()
+{
+        echo  'I like bash Programming '
+}
+F1
+      OUTPUT:
+$ ./functionexample.sh
+I like bash Programming
