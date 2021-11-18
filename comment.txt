@@ -1,0 +1,14 @@
+                            COMMENT
+     EXAMPLE:1
+$ vi commentexample.sh
+$ chmod u+x commentexample.sh
+$ cat commentexample.sh
+#!/bin/bash
+# Add two numeric value
+((sum=25+35))
+#print the result
+echo $sum
+
+       OUTPUT:
+$ ./commentexample.sh
+60
